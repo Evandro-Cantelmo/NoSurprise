@@ -3,6 +3,7 @@ import firebase from "firebase";
 const firebaseConfig = {
   apiKey: "AIzaSyDxPEyGI6yBVyvfCbmGgwo_mpTmNOPTls0",
   authDomain: "nosurprise-53b33.firebaseapp.com",
+  databaseURL: "https://nosurprise-53b33-default-rtdb.firebaseio.com",
   projectId: "nosurprise-53b33",
   storageBucket: "nosurprise-53b33.appspot.com",
   messagingSenderId: "605753324323",
