@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Redirect } from "react-router-dom";
+import { Button, Card, Container, H1, Input } from "./styles";
 
 const SignUp = () => {
   const { SignUpFirebase, LogOn } = useContext(AuthContext);
@@ -18,43 +19,41 @@ const SignUp = () => {
   }
 
   return (
-    <div>
-      <form
-        className="container"
-        autoComplete="off"
-        style={{ marginTop: "30px" }}
-        onSubmit={handleSubmit}
-      >
-        <legend>
-          <h4>Sign Up</h4>
-        </legend>
-        <div className="form-group">
-          <label htmlFor="email">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            autoComplete="off"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            autoComplete="off"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Sign Up
-        </button>
-      </form>
-    </div>
+    <Container>
+      <Card>
+        <form
+          autoComplete="off"
+          style={{ marginTop: "30px" }}
+          onSubmit={handleSubmit}
+        >
+          <H1>Sign Up</H1>
+
+          <div>
+            <Input
+              type="email"
+              placeholder="Email"
+              id="email"
+              autoComplete="off"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div>
+            <Input
+              type="password"
+              placeholder='Password'
+              id="password"
+              autoComplete="off"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </div>
+          <Button type="submit">
+            Sign Up
+          </Button>
+        </form>
+      </Card>
+    </Container>
   );
 };
 

@@ -7,27 +7,15 @@ export const NavItems = () => {
 
   if (!LogOn) {
     return (
-      <div className="d-flex">
-        <Link
-          to="/"
-          activeClassName="border-bottom border-top border-primary rounded"
-          className="nav-link"
-        >
-          Sign In
-        </Link>
-        <Link
-          to="/signup"
-          activeClassName="border-bottom border-top border-primary rounded"
-          className="nav-link mr-md-5"
-        >
-          Sign Up
-        </Link>
+      <div style={{ display: "none" }}>
+        <Link to="/">Sign In</Link>
+        <Link to="/signup">Sign Up</Link>
       </div>
     );
   }
 
   return (
-    <Link to="/" className="nav-link mr-md-5" onClick={SignOutFirebase}>
+    <Link to="/" onClick={SignOutFirebase}>
       Sign Out
     </Link>
   );

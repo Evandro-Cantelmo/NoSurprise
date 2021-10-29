@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.card{
+    width: 30%;
+    height: 60%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

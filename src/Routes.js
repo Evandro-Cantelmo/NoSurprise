@@ -12,8 +12,10 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Switch>
+            
             <Route exact path="/" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
+            
           </Switch>
         </BrowserRouter>
       </AuthContextProvider>
