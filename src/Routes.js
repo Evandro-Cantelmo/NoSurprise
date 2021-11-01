@@ -4,19 +4,23 @@ import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import { Navbar } from "./layout/Navbar";
 import { AuthContextProvider } from "./context/AuthContext";
+import { Dashboard } from "./components/dashboard/Dashboard";
 
 function App() {
   return (
     <>
       <AuthContextProvider>
+        
         <BrowserRouter>
-          <Navbar />
+        <Navbar />
           <Switch>
             
-            <Route exact path="/" component={SignIn} />
+            <Route exact path="/SignIn" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/" component={Dashboard} />
             
           </Switch>
+          
         </BrowserRouter>
       </AuthContextProvider>
     </>

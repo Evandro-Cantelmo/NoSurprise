@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, Redirect } from "react-router-dom";
-import "./style.css";
+import "../../style.css";
 import { Button, Card, Container, H1, Input } from "./styles";
 
 const SignIn = () => {

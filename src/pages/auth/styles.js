@@ -16,10 +16,32 @@ export const InEffect = keyframes`
   transform: perspective(300px);
   }
 `
+export const BackEffect = keyframes`
+0% {
+  background: #19dcea;
+}
+20% {
+  background: #b22cff;
+}
+40% {
+  background: #ea2222;
+}
+60% {
+  background: #f5be10;
+}
+80% {
+  background: #3bd80d;
+}
+100% {
+  background: #19dcea;
+}
+`;
 
 export const Container = styled.div`
   display: flex;
-  background: #ff8400;
+  animation-name: ${BackEffect};
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
   width: 100vw;
   height: 100vh;
   align-items: center;
@@ -82,7 +104,9 @@ export const Input = styled.input`
   height: 4vh;
   border-radius: 20px;
   outline: none;
+  margin:10px;
   text-align:center;
+  border: none;
 
   @media ${device.laptop} {
     width: 100%;

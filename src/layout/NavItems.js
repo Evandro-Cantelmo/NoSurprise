@@ -15,8 +15,13 @@ export const NavItems = () => {
   }
 
   return (
-    <Link to="/" onClick={SignOutFirebase}>
-      Sign Out
-    </Link>
+    <div>
+      <div>
+        asd
+      </div>
+      <Link to="/" onClick={SignOutFirebase}>
+        Sign Out
+      </Link>
+    </div>
   );
 };
