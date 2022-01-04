@@ -9,7 +9,8 @@ export const TaskContextProvider = (props) => {
     const [Tasks, setTasks] = useState([])
     // const { User } = useContext(AuthContext)
     const [User, setUser] = useState(null)
-    
+
+
     firebase.auth().onAuthStateChanged((user) => {
         setUser(user)
     })
@@ -41,12 +42,12 @@ export const TaskContextProvider = (props) => {
 
     const AddTaskFireBase = (task) => {
         const d = new Date()
-        var date = d.getDate() + "-" + (parseInt(d.getUTCMonth()) + 1).toString() + "-" + d.getFullYear()
+        let date = d.getDate() + "-" + (parseInt(d.getUTCMonth()) + 1).toString() + "-" + d.getFullYear()
          console.log('Tasks', Tasks)
         const obj = {
             task,
             completed: false,
-            addedon: date
+            addedon: date,
         }
         firebase.firestore().collection("Users").doc(User.uid).collection("Tasks").add(obj)
         console.log(firebase.firestore())
@@ -61,6 +62,11 @@ export const TaskContextProvider = (props) => {
             completed: !completed
         })
     }
+    const PriceTaskFireBase = (id, editprice) => {
+        firebase.firestore().collection("Users").doc(User.uid).collection("Tasks").doc(id).update({
+            price: editprice
+        })
+    }
 
     const EditTaskFireBase = (id, edittext) => {
         firebase.firestore().collection("Users").doc(User.uid).collection("Tasks").doc(id).update({
@@ -68,6 +74,8 @@ export const TaskContextProvider = (props) => {
         })
     }
 
+    let numeros = [];
+    
     return (
         <TaskContext.Provider
             value={{
@@ -75,7 +83,8 @@ export const TaskContextProvider = (props) => {
                 AddTaskFireBase,
                 DeleteTaskFireBase,
                 EditTaskFireBase,
-                UpdateTaskFireBase
+                UpdateTaskFireBase,
+                PriceTaskFireBase,numeros
             }}
         >
             {props.children}

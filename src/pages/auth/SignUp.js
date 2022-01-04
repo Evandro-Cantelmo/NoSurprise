@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Redirect } from "react-router-dom";
 import { Button, Card, Container, H1, Input } from "./styles";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const { SignUpFirebase, LogOn } = useContext(AuthContext);
@@ -26,14 +27,13 @@ const SignUp = () => {
           style={{ marginTop: "30px" }}
           onSubmit={handleSubmit}
         >
-          <H1>Sign Up</H1>
+          <H1>Cadastro</H1>
 
           <div>
             <Input
               type="email"
               placeholder="Email"
               id="email"
-              autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -41,16 +41,15 @@ const SignUp = () => {
           <div>
             <Input
               type="password"
-              placeholder='Password'
+              placeholder="Password"
               id="password"
-              autoComplete="off"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
           </div>
-          <Button type="submit">
-            Sign Up
-          </Button>
+          <Button type="submit">Cadastrar</Button>
+          <Button ><Link              style={{ textDecoration: "none", color: "black" }}
+              to="/">Voltar</Link></Button>
         </form>
       </Card>
     </Container>

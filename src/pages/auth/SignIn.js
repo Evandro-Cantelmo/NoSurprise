@@ -22,9 +22,9 @@ const SignIn = () => {
   return (
     <Container>
       <Card>
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
-            <H1>Sign In</H1>
+            <H1>Login</H1>
           </div>
           <div>
             <Input
@@ -33,7 +33,6 @@ const SignIn = () => {
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              autoComplete="off"
             />
           </div>
           <div>
@@ -43,15 +42,17 @@ const SignIn = () => {
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-              autoComplete="off"
             />
           </div>
-          <Button type="submit" className="btn btn-primary">
-            Sign In
-          </Button>
+          <Button type="submit">Entrar</Button>
 
           <Button>
-            <Link to="/signup">Sign Up</Link>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/signup"
+            >
+              Cadastrar
+            </Link>
           </Button>
         </form>
       </Card>

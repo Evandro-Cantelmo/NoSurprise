@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 import { device } from "../../theme/sizes";
 import colors from "../../theme/colors";
 
-
 export const InEffect = keyframes`
 0% {
 
@@ -15,7 +14,7 @@ export const InEffect = keyframes`
 
   transform: perspective(300px);
   }
-`
+`;
 export const BackEffect = keyframes`
 0% {
   background: #19dcea;
@@ -47,14 +46,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-
-  @media ${device.laptop} {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    padding: 0px 10px;
-  }
 `;
 
 export const Row = styled.div`
@@ -85,6 +76,14 @@ export const Card = styled.div`
   animation-duration: 1s;
 
   @media ${device.laptop} {
+    width: 30vw;
+    margin: 0 10%;
+  }
+  @media ${device.tablet} {
+    width: 50vw;
+    margin: 0 10%;
+  }
+  @media ${device.mobileL} {
     width: 80vw;
     margin: 0 10%;
   }
@@ -100,29 +99,38 @@ export const FormGroup = styled.div`
   }
 `;
 export const Input = styled.input`
-  width: 15vw;
-  height: 4vh;
+  width: 35vw;
+  height: 5vh;
   border-radius: 20px;
   outline: none;
-  margin:10px;
-  text-align:center;
+  margin: 10px 0;
+  text-align: center;
   border: none;
 
-  @media ${device.laptop} {
-    width: 100%;
+  @media ${device.tablet} {
+    width: 50vw;
   }
 `;
 
 export const Button = styled.button`
-  width: 5vw;
-  height: 4vh;
+  width: 10vw;
+
+  height: 5vh;
   border: none;
-  margin:20px 0;
-  border-radius: 20px;
-  text-decoration:none;
+  margin: 20px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  @media ${device.tablet} {
+    width: 25vw;
+    border-radius: 10px;
+    
+    height: 5vh;
+  }
+  @media ${device.mobileL} {
+    font-size: 3vw;
+  }
 `;
 
 export const H1 = styled.h1`
-
   color: #ff8400;
 `;

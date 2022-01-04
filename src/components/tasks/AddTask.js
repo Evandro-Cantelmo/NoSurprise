@@ -16,20 +16,28 @@ export const AddTask = () => {
 
   return (
     <div>
-      <form
-        autoComplete="off"
-        style={{ marginTop: "30px" }}
-        onSubmit={handleSubmit}
-      >
-        <div>
-          <Input
-            type="text"
-            id="task"
-            onChange={(e) => setTask(e.target.value)}
-            value={task}
-          />
-        </div>
-        <Button type="submit">Add Task</Button>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <span
+          style={{
+            marginTop: "30px",
+            
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Input
+              type="text"
+              id="task"
+              placeholder="Digite sua Task"
+              onChange={(e) => setTask(e.target.value)}
+              value={task}
+            />
+          </div>
+          <Button type="submit">Adicionar Task</Button>
+        </span>
       </form>
     </div>
   );
