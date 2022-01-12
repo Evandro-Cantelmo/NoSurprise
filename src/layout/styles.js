@@ -70,7 +70,7 @@ export const H1 = styled.h1`
 export const SideBar = styled.div`
   width: 5vw;
   height: 100vh;
-  background: red;
+  background: white;
   position: fixed;
 
   justify-content: center;
@@ -87,7 +87,7 @@ export const HeadBar = styled.div`
   display: none;
   width: 100vw;
   height: 7vh;
-  background: red;
+  background: white;
   position: fixed;
   @media ${device.tablet} {
     display: flex;

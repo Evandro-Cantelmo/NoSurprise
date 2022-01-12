@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export const NavItems = () => {
   const { LogOn, SignOutFirebase } = useContext(AuthContext);
@@ -16,12 +16,15 @@ export const NavItems = () => {
   }
 
   return (
-    <div>
-      <div>
-        asd
-      </div>
-      <Link style={{textDecoration:'none', color:'black', cursor:'pointer'}} to="/" onClick={SignOutFirebase}>
-        <LogoutIcon/>
+    <div style={{display:'flex', justifyContent:'center', alignItems:"center"}}>
+      <div></div>
+
+      <Link
+        style={{ textDecoration: "none", color: "black", cursor: "pointer" }}
+        to="/SignIn"
+        onClick={SignOutFirebase}
+      >
+        <LogoutIcon />
       </Link>
     </div>
   );

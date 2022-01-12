@@ -24,16 +24,20 @@ export const Tasks = () => {
 
   return (
     <>
-      <p       style={{
-        background: "white",
-        margin: "10px 0",
-        width: "50%",
-        height: "7vh",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        borderRadius: "10px",
-      }}>Valor total: R$ {result}</p>
+      <p
+        style={{
+          background: "white",
+          margin: "10px 0",
+          width: "50%",
+          height: "7vh",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          borderRadius: "10px",
+        }}
+      >
+        Valor total: R$ {result?.toFixed(2)}
+      </p>
       <Div>
         {Tasks.map((task) => {
           return <Task key={task.id} task={task} />;
