@@ -108,7 +108,7 @@ export const Task = (props) => {
 
       <Modal
         style={{
-          width: "25vw",
+          width: "45vw",
           height: "100vh",
         }}
         open={show}
@@ -116,7 +116,7 @@ export const Task = (props) => {
       >
         <Box
           style={{
-            width: "25vw",
+            width: "45vw",
             height: "100vh",
             background: "white",
             display: "flex",
@@ -129,7 +129,7 @@ export const Task = (props) => {
           <Typography>{task}</Typography>
           <hr />
           <Input
-            style={{ border: "1px solid black" }}
+            style={{ border: "1px solid black", width:'90%' }}
             type="text"
             placeholder="Mudar para..."
             value={EditText}
@@ -137,17 +137,17 @@ export const Task = (props) => {
           />
           <hr />
 
-          <Button variant="contained" onClick={handleEdit}>
+          <Button style={{  width:'90%' }} size="small" variant="contained" onClick={handleEdit}>
             Salvar alteração
           </Button>
 
-          <Button onClick={handleClose}>fechar</Button>
+          <Button style={{  width:'90%' }} size="small" onClick={handleClose}>fechar</Button>
         </Box>
       </Modal>
 
       <Modal
         style={{
-          width: "25vw",
+          width: "45vw",
           height: "100vh",
         }}
         open={showPrice}
@@ -155,7 +155,7 @@ export const Task = (props) => {
       >
         <Box
           style={{
-            width: "25vw",
+            width: "45vw",
             height: "100vh",
             background: "white",
             display: "flex",
@@ -169,16 +169,16 @@ export const Task = (props) => {
           <hr />
           <Input
             type="number"
-            style={{ border: "1px solid black" }}
+            style={{ border: "1px solid black", width:'90%' }}
             placeholder="Preço"
             value={EditPrice}
             onChange={(e) => setEditPrice(e.target.value)}
           />
           <hr />
-          <Button variant="contained" onClick={handleEditPrice}>
+          <Button style={{  width:'90%' }} size="small" variant="contained" onClick={handleEditPrice}>
             Salvar alteração
           </Button>
-          <Button onClick={handleClosePrice}>Fechar</Button>
+          <Button style={{  width:'90%' }} size="small" onClick={handleClosePrice}>Fechar</Button>
         </Box>
       </Modal>
     </div>
