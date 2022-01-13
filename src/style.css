@@ -1,7 +1,33 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track-piece {
+    background:  #8e21c9;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #db6373;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #da6e7c;
+  }
+
 body{
     margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/nosurprise-53b33.appspot.com/o/Users%2F8ccf9ab3e24e23a7b42e89c8169cba60.jpg?alt=media&token=9ff9c502-d70a-4739-aebe-e2521040f8a9");
+    background-repeat:repeat-y;
+    background-position: center;
+    background-size: 100vw;
+    overflow-x: hidden;
 }
+
 .card{
     width: 30%;
     height: 60%;

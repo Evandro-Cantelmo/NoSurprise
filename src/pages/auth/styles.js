@@ -5,10 +5,6 @@ import colors from "../../theme/colors";
 
 export const Container = styled.div`
   display: flex;
-  background-image: url("/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   width: 100vw;
   height: 100vh;
   align-items: center;
