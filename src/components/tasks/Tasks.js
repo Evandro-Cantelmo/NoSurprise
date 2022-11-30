@@ -22,6 +22,7 @@ export const Tasks = () => {
     setResult(soma);
   });
 
+  console.log("aqui estao", Tasks);
   return (
     <>
       <p

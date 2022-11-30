@@ -33,7 +33,7 @@ export const Navbar = () => {
       </HeadBar>
 
       <SideBar style={{ display: `${open}` }}>
-        <nav>
+        <nav onClick={() => effect()}>
           <NavItems />
         </nav>
       </SideBar>

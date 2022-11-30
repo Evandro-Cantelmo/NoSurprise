@@ -8,7 +8,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export const Task = (props) => {
-  const { id, addedon, task, completed, price } = props.task;
+  const { id, addedon, task, completed, price, quant } = props.task;
   const {
     DeleteTaskFireBase,
     UpdateTaskFireBase,
@@ -25,6 +25,11 @@ export const Task = (props) => {
   const [pricet, setPricet] = useState("Valor");
 
   const [EditPrice, setEditPrice] = useState("");
+
+  const [Quant, setQuant] = useState("1");
+  console.log(typeof Quant);
+  console.log(typeof EditPrice);
+  console.log(Quant * EditPrice);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -46,6 +51,7 @@ export const Task = (props) => {
     if (EditText !== "") {
       EditTaskFireBase(id, EditText);
       setEditPrice("");
+      setQuant("");
     }
   };
 
@@ -53,8 +59,9 @@ export const Task = (props) => {
     e.preventDefault();
     setShow(false);
     if (EditPrice !== "") {
-      PriceTaskFireBase(id, EditPrice);
+      PriceTaskFireBase(id, Quant * EditPrice, Quant);
       setEditPrice({});
+      setQuant(1);
     }
   };
 
@@ -64,7 +71,7 @@ export const Task = (props) => {
     } else if (price === undefined) {
       setPricet(0);
     } else {
-      setPricet(`R$${price}`);
+      setPricet(`R$${price.toFixed(2)}`);
     }
   });
 
@@ -84,6 +91,11 @@ export const Task = (props) => {
       <p>{task}</p>
 
       <p onClick={handleShowPrice}>{pricet}</p>
+
+      <p onClick={handleShowPrice}>
+        R${quant == undefined ? "0" : price / quant} x
+        {quant == undefined ? "1" : quant}
+      </p>
 
       <span
         style={{ color: "#66ffe1", cursor: "pointer" }}
@@ -129,7 +141,7 @@ export const Task = (props) => {
           <Typography>{task}</Typography>
           <hr />
           <Input
-            style={{ border: "1px solid black", width:'90%' }}
+            style={{ border: "1px solid black", width: "90%" }}
             type="text"
             placeholder="Mudar para..."
             value={EditText}
@@ -137,11 +149,18 @@ export const Task = (props) => {
           />
           <hr />
 
-          <Button style={{  width:'90%' }} size="small" variant="contained" onClick={handleEdit}>
+          <Button
+            style={{ width: "90%" }}
+            size="small"
+            variant="contained"
+            onClick={handleEdit}
+          >
             Salvar alteração
           </Button>
 
-          <Button style={{  width:'90%' }} size="small" onClick={handleClose}>fechar</Button>
+          <Button style={{ width: "90%" }} size="small" onClick={handleClose}>
+            fechar
+          </Button>
         </Box>
       </Modal>
 
@@ -166,19 +185,40 @@ export const Task = (props) => {
           }}
         >
           <Typography>{task}</Typography>
-          <hr />
+          <br />
           <Input
             type="number"
-            style={{ border: "1px solid black", width:'90%' }}
+            style={{ border: "1px solid black", width: "90%" }}
             placeholder="Preço"
             value={EditPrice}
             onChange={(e) => setEditPrice(e.target.value)}
           />
-          <hr />
-          <Button style={{  width:'90%' }} size="small" variant="contained" onClick={handleEditPrice}>
+
+          <br />
+          <Input
+            type="number"
+            style={{ border: "1px solid black", width: "20%" }}
+            placeholder="Quantidade"
+            value={Quant}
+            onChange={(e) => setQuant(e.target.value)}
+          />
+
+          <br />
+          <Button
+            style={{ width: "90%" }}
+            size="small"
+            variant="contained"
+            onClick={handleEditPrice}
+          >
             Salvar alteração
           </Button>
-          <Button style={{  width:'90%' }} size="small" onClick={handleClosePrice}>Fechar</Button>
+          <Button
+            style={{ width: "90%" }}
+            size="small"
+            onClick={handleClosePrice}
+          >
+            Fechar
+          </Button>
         </Box>
       </Modal>
     </div>

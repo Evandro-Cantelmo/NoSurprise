@@ -32,6 +32,7 @@ export const TaskContextProvider = (props) => {
     }
     // eslint-disable-next-line
   }, [User]);
+  console.log(Tasks);
 
   const AddTaskFireBase = (task) => {
     const d = new Date();
@@ -76,7 +77,7 @@ export const TaskContextProvider = (props) => {
         completed: !completed,
       });
   };
-  const PriceTaskFireBase = (id, editprice) => {
+  const PriceTaskFireBase = (id, editprice, quant) => {
     firebase
       .firestore()
       .collection("Users")
@@ -85,6 +86,7 @@ export const TaskContextProvider = (props) => {
       .doc(id)
       .update({
         price: editprice,
+        quant: quant
       });
   };
 
