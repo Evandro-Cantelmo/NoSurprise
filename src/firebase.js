@@ -1,14 +1,13 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxPEyGI6yBVyvfCbmGgwo_mpTmNOPTls0",
-  authDomain: "nosurprise-53b33.firebaseapp.com",
-  databaseURL: "https://nosurprise-53b33-default-rtdb.firebaseio.com",
-  projectId: "nosurprise-53b33",
-  storageBucket: "nosurprise-53b33.appspot.com",
-  messagingSenderId: "605753324323",
-  appId: "1:605753324323:web:5245f128b785a11b4a9296",
-  measurementId: "G-HEZFJ0N8S2",
+  apiKey: "AIzaSyBkJj_fn7vkaijcySLUchGI76RQ9Opf7G4",
+  authDomain: "nosurprisesweb.firebaseapp.com",
+  projectId: "nosurprisesweb",
+  storageBucket: "nosurprisesweb.firebasestorage.app",
+  messagingSenderId: "609514348719",
+  appId: "1:609514348719:web:4d759b808c102acc87345a",
+  measurementId: "G-0J91PM1ZB5"
 };
 
 firebase.initializeApp(firebaseConfig);
